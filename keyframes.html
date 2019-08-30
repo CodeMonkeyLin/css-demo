@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #myDIV {
+            width: 300px;
+            height: 200px;
+            background: red;
+            animation: mymove 4s infinite steps(2, start);
+        }
+
+        @keyframes mymove {
+
+            0%,
+            50% {
+                background: red;
+            }
+
+            100% {
+                background: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDIV"></div>
+    <script>
+        // alert(window.devicePixelRatio)
+    </script>
+</body>
+
+</html>

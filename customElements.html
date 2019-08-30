@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <x-ell rows="2" />
+    <button onclick="method">click</button>
+    <script>
+        function method() {
+            document.querySelector('x-ell').rows = '3';
+        }
+        class HTMLEllElement extends HTMLElement {
+            // 指定观察的属性，这样attributeChangedCallback才会起作用
+            static get observedAttributes() { return ['rows']; }
+
+            constructor() {
+                super();
+            }
+
+            // 下面4个方法为常用生命周期
+            connectedCallback() {
+                console.log('自定义元素加入页面');
+                // 执行渲染更新
+                this._updateRendering();
+            }
+            disconnectedCallback() {
+                // 本例子该生命周期未使用，占位示意
+                console.log('自定义元素从页面移除');
+            }
+            adoptedCallback() {
+                // 本例子该生命周期未使用，占位示意
+                console.log('自定义元素转移到新页面');
+            }
+            attributeChangedCallback(name, oldValue, newValue) {
+                console.log('自定义元素属性发生变化');
+                this._rows = newValue;
+                // 执行渲染更新
+                this._updateRendering();
+            }
+            // 设置直接get/set rows属性的方法
+            get rows() {
+                return this._rows;
+            }
+            set rows(v) {
+                this.setAttribute('rows', v);
+            }
+
+            _updateRendering() {
+                // 根据变化的属性，改变组件的UI
+                // ...
+            }
+        }
+        // 定义x-ell标签元素为多行打点元素
+        customElements.define('x-ell', HTMLEllElement);
+    </script>
+</body>
+
+</html>
