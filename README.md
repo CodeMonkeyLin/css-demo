@@ -6,10 +6,10 @@
 ### vw vh
 -  vw：viewpoint width，视窗宽度，1vw等于视窗宽度的1%。
 - vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。
->> 与百分比区别，vwvh不包含滚动条
+> 与百分比区别，vwvh不包含滚动条
 ### rem
 - rem  相对的HTML根元素字体大小
->> 可以结合vw解决移动端自适应，例如640px设计稿设1rem=100px代码如下
+> 可以结合vw解决移动端自适应，例如640px设计稿设1rem=100px代码如下
 
 ```css
 html {
