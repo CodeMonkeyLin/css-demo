@@ -27,7 +27,7 @@ viewport 的大小是和设备相关的，在移动端例如手机上，viewport
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 ```
->>配置viewport,rem才能起作用
+> 配置viewport,rem才能起作用
 - width:设置layout viewport  的宽度，为一个正整数，或字符串"width-device"
 - initial-scale:设置页面的初始缩放值，为一个数字，可以带小数
 - minimum-scale:允许用户的最小缩放值，为一个数字，可以带小数
