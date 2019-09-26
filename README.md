@@ -34,3 +34,57 @@ viewport 的大小是和设备相关的，在移动端例如手机上，viewport
 - maximum-scale:允许用户的最大缩放值，为一个数字，可以带小数
 - height:设置layout viewport  的高度，这个属性对我们并不重要，很少使用
 - user-scalable:是否允许用户进行缩放，值为"no"或"yes", no 代表不允许，yes代表允许
+
+## 前端响应式图像设计
+### 像素密度的选择：srcset属性
+>根据DPR识别
+
+```html
+<img srcset="./img/img.png,
+    ./img/img1.jpg 3x,
+    ./img/img2.jpg 2x" src="./img/img.png"> 
+```
+上面代码中，srcset属性给出了三个图像 URL，适应三种不同的像素密度。
+
+图像 URL 后面的像素密度描述符，格式是像素密度倍数 + 字母x。1x表示单倍像素密度，可以省略。浏览器根据当前设备的像素密度，选择需要加载的图像。
+
+如果srcset属性都不满足条件，那么就加载src属性指定的默认图像。
+
+### srcset 和 sizes
+>根据屏幕DPR*屏幕宽度
+
+```html
+ <img srcset="./img/elva-fairy-320w.jpg 320w,
+    ./img/elva-fairy-480w.jpg 480w,
+    ./img/elva-fairy-640w.jpg 640w,
+    ./img/elva-fairy-800w.jpg 800w" src="./img/img1.jpg" sizes="(max-width: 320px) 280px,
+    (max-width: 480px) 440px,
+    (max-width: 640px) 640px,
+    800px">
+```
+有了这些属性，浏览器会：
+
+- 查看设备宽度
+- 检查sizes列表中哪个媒体条件是第一个为真
+- 查看给予该媒体查询的槽大小
+- 加载srcset列表中引用的最接近所选的槽大小的图像
+> 如果支持浏览器以视窗宽度为480px来加载页面，那么(max-width: 480px)的媒体条件为真，因此440px的槽会被选择，所以elva-fairy-480w.jpg将加载，因为它的的固定宽度（480w）最接近于440px。800px的照片大小为128KB而480px版本仅有63KB大小—节省了65KB。现在想象一下，如果这是一个有很多图片的页面。使用这种技术会节省移动端用户的大量带宽。
+>> 在 HTML 文件中的 <head> 标签里， 需设置 <meta name="viewport" content="width=device-width">
+
+### <picture>标签，<source>标签
+```html 
+<picture>
+    <source srcset="./img/img.png,
+                ./img/img@2x.png 2x" media="(min-width: 990px)">
+    <source srcset="./img/img1.jpg,
+                ./img/img2.jpg 2x" media="(min-width: 750px)">
+    <img srcset="./img/elva-800w.JPG,
+                ./img/elva-800w.JPG 2x" alt="Shopify Merchant, Corrine Anestopoulos">
+</picture>
+```
+media进行媒体查询，图片后面的+x根据设备DPR识别
+
+### 参考文章
+https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+http://www.ruanyifeng.com/blog/2019/06/responsive-images.html
+
