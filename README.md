@@ -71,7 +71,7 @@ viewport 的大小是和设备相关的，在移动端例如手机上，viewport
 > 如果支持浏览器以视窗宽度为480px来加载页面，那么(max-width: 480px)的媒体条件为真，因此440px的槽会被选择，所以elva-fairy-480w.jpg将加载，因为它的的固定宽度（480w）最接近于440px。800px的照片大小为128KB而480px版本仅有63KB大小—节省了65KB。现在想象一下，如果这是一个有很多图片的页面。使用这种技术会节省移动端用户的大量带宽。
 >> 在 HTML 文件中的 <head> 标签里， 需设置 <meta name="viewport" content="width=device-width">
 
-### <picture>标签，<source>标签
+### picture标签，source标签
 ```html 
 <picture>
     <source srcset="./img/img.png,
