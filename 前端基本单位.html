@@ -11,32 +11,31 @@
       padding: 0;
     }
 
-    body,
-    html {
-      height: 100%;
-    }
+
+
 
     /* px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的 */
     /* div {
-      width: 1625px;
+      width: 375px;
       height: 10px;
-      background: yellow;
+      background: blue;
     } */
 
     /* em(相对长度单位，相对于当前对象内文本的字体尺寸) */
     /* .father {
-      font-size: 20px;
+      font-size: 100px; 1000px 500px
     }
+
     .son {
-      width: 100em;
+      width: 5em;
       height: 1em;
       background: green;
     } */
 
     /* vw vh  
         vw：viewpoint width，视窗宽度，1vw等于视窗宽度的1%。
-        vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。
-    */
+        vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。 */
+
     /* .father {
       height: 1400px;
     }
@@ -68,8 +67,8 @@
       background-color: #999;
       border-radius: 6px;
       -webkit-border-radius: 6px;
-    }
-
+    } */
+    /* 
     ::-webkit-scrollbar-thumb:horizontal {
       width: 5px;
       background-color: #ccc;
@@ -78,22 +77,23 @@
     } */
 
     /* rem  相对的HTML根元素字体大小*/
-    /* html {
+    html {
       font-size: 15.625vw;
     }
+
     #son {
       height: 100px;
       width: 1rem;
-      background: red;
+      background: blue;
       font-size: .32rem;
-    } */
+    }
 
   </style>
 </head>
 
 <body>
   <!-- px -->
-  <!-- <div></div> -->
+  <div></div>
 
   <!-- em -->
   <!-- <div class="father">
@@ -111,11 +111,11 @@
   </div> -->
 
   <!-- rem -->
-  <!-- <div id="father">
+  <div id="father">
     <div id="son">
       屏幕自适应解决方案
     </div>
-  </div> -->
+  </div>
 </body>
 
 </html>

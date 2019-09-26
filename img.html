@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /* img {
+        width: 300px;
+        height: 400px;
+    } */
+</style>
+
+<body>
+    <!-- <img srcset="./img/img.png,
+    ./img/img1.jpg 3x,
+    ./img/img2.jpg 2x" src="./img/img.png"> -->
+    <img srcset="./img/elva-fairy-320w.jpg 320w,
+    ./img/elva-fairy-480w.jpg 480w,
+    ./img/elva-fairy-640w.jpg 640w,
+    ./img/elva-fairy-800w.jpg 800w" src="./img/img1.jpg" sizes="(max-width: 320px) 280px,
+    (max-width: 480px) 440px,
+    (max-width: 640px) 640px,
+    800px">
+    <!-- <picture>
+        <source media="(max-width: 799px)" srcset="./img/elva-480w-close-portrait.jpg">
+        <source media="(min-width: 800px)" srcset="./img/elva-800w.jpg">
+        <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+    </picture> -->
+    <!-- <picture>
+        <source srcset="./img/img.png,
+                           ./img/img@2x.png 2x" media="(min-width: 990px)">
+        <source srcset="./img/img1.jpg,
+            ./img/img2.jpg 2x" media="(min-width: 750px)">
+        <img srcset="./img/elva-800w.JPG,
+                       ./img/elva-800w.JPG 2x" alt="Shopify Merchant, Corrine Anestopoulos">
+    </picture> -->
+</body>
+
+</html>
