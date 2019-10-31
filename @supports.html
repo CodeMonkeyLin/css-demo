@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .selector {
+            /* Styles that are supported in old browsers */
+            background: red;
+            height: 200px;
+            -moz-text-align-last: justify;
+        }
+
+        /* 检测是否支持指定的CSS属性 */
+        /* @supports (display: grid) {
+            .selector {
+                background: yellow;
+
+            }
+        } */
+        /* 检测是否支持指定的CSS属性或者其带前缀版本 */
+        /* @supports ((perspective: 10px) or (-moz-perspective: 10px) or (-webkit-perspective: 10px) or (-ms-perspective: 10px) or (-o-perspective: 10px)) {
+            .selector {
+                background: yellow;
+            }
+        } */
+        /* 检测是否不支持指定的CSS属性 */
+        /* @supports (not ((text-align-last:justify) and (-moz-text-align-last:justify))) {
+            .selector {
+                background: yellow;
+
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="selector"></div>
+</body>
+
+</html>
