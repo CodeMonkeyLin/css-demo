@@ -91,3 +91,59 @@ media进行媒体查询，图片后面的+x根据设备DPR识别
 https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
 http://www.ruanyifeng.com/blog/2019/06/responsive-images.html
 
+## @supports
+在不支持某些特定css的浏览器下实现渐进增强式设计及css hack早期解决方案采取使用[Modernizr](https://modernizr.com),现在可以使用@supports进行更优处理
+### 语法规则
+```css
+@supports <条件规则> {
+  /* 特殊样式规则 */
+}
+```
+>一个支持条件是由一个或者多个由不同的逻辑操作符组成的表达式声明组合而成的.使用小括号可以调整这些表达式之间的运算优先级
+
+### 基本操作
+```css
+@supports (display: grid) {
+    .selector {
+        background: yellow;
+
+    }
+}
+```
+>检测是否支持指定的CSS属性
+
+### 布尔操作
+
+#### not
+```css
+@supports (display:flex) {
+    .selector {
+        float: left;
+    }
+}	
+```
+>检测是否不支持指定的CSS属性
+
+#### and
+```css
+@supports (display: table-cell) and (display: list-item) {
+    .selector {
+        display: block;
+    }
+}
+```
+>检测多个CSS属性支持情况
+
+#### or
+```css
+@supports ((perspective: 10px) or (-moz-perspective: 10px) or (-webkit-perspective: 10px) or (-ms-perspective: 10px) or (-o-perspective: 10px)) {
+    .selector {
+        background: yellow;
+    }
+}
+```
+>允许我们在条件中列出多个属性：值对，只要一个为true，就会应用块中的样式。相关用例属于具有前缀的属性。
+### 兼容性
+该规则的[浏览器兼容性](https://caniuse.com/css-supports-api/embed)对IE不友好
+### 参考文章
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/@supports
