@@ -149,3 +149,26 @@ http://www.ruanyifeng.com/blog/2019/06/responsive-images.html
 该规则的[浏览器兼容性](https://caniuse.com/css-supports-api/embed)对IE不友好
 ### 参考文章
 https://developer.mozilla.org/zh-CN/docs/Web/CSS/@supports
+
+## img Lazy loading
+
+### img loading属性
+- lazy
+> 图片或框架懒加载，也就是元素资源快要被看到的时候加载。
+- eager
+> 图片或框架无视一切进行加载。
+- auto
+> 默认值。图片或框架基于浏览器自己的策略进行加载
+使用loading="lazy"语法可实现图片的懒加载
+```html
+    <img src="./example.jpg" loading="lazy">
+```
+### loading属性兼容性
+支持Chrome浏览器76版本，其他浏览器支持不友好
+
+### js懒加载
+利用自定义属性data-src存储需要加载图片，用getBoundingClientRect监听元素位置，当页面滚动到相应位置使用src指向data-src地址
+
+### 参考文章
+https://www.zhangxinxu.com/wordpress/2019/09/native-img-loading-lazy/
+https://juejin.im/post/5bbc60e8f265da0af609cd04
