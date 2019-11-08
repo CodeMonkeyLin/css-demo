@@ -28,7 +28,8 @@ viewport 的大小是和设备相关的，在移动端例如手机上，viewport
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 ```
 > 配置viewport,rem才能起作用
-- width:设置layout viewport  的宽度，为一个正整数，或字符串"width-device"
+>
+> - width:设置layout viewport  的宽度，为一个正整数，或字符串"width-device"
 - initial-scale:设置页面的初始缩放值，为一个数字，可以带小数
 - minimum-scale:允许用户的最小缩放值，为一个数字，可以带小数
 - maximum-scale:允许用户的最大缩放值，为一个数字，可以带小数
@@ -69,7 +70,8 @@ viewport 的大小是和设备相关的，在移动端例如手机上，viewport
 - 查看给予该媒体查询的槽大小
 - 加载srcset列表中引用的最接近所选的槽大小的图像
 > 如果支持浏览器以视窗宽度为480px来加载页面，那么(max-width: 480px)的媒体条件为真，因此440px的槽会被选择，所以elva-fairy-480w.jpg将加载，因为它的的固定宽度（480w）最接近于440px。800px的照片大小为128KB而480px版本仅有63KB大小—节省了65KB。现在想象一下，如果这是一个有很多图片的页面。使用这种技术会节省移动端用户的大量带宽。
->> 在 HTML 文件中的 head 标签里， 需设置 
+>
+> > 在 HTML 文件中的 head 标签里， 需设置 
 ```html
 <meta name="viewport" content="width=device-width">
 ```
@@ -118,7 +120,7 @@ http://www.ruanyifeng.com/blog/2019/06/responsive-images.html
 ```css
 @supports (display:flex) {
     .selector {
-        float: left;
+        dispaly: flex;
     }
 }	
 ```
